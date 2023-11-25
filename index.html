@@ -1,0 +1,76 @@
+<html>
+<head>
+   <style>
+    table{
+        margin-top: 7px;
+        border: 1px solid green;
+        margin-left: 98px;
+        border-collapse: collapse;
+        
+    }
+      td, th {
+         padding: 10px;
+         border: 1px solid rgb(30, 150, 124);
+         border-collapse: collapse;
+      }
+      .cont1 {
+    width: 77rem;
+    margin: auto;
+    
+    background:rgb(2, 110, 106);
+    height:60px;
+    color: white;
+    font-family:monospace;
+    padding-top: 1px;
+    font-size: 13px;
+    padding-left: 50px;
+}
+th{
+    width: 618px;
+
+    
+}
+   </style>
+</head>
+<body>
+    <div class="cont1">
+        <h1>In Demand Online MBA Course Specialization 2024</h1>
+        </div>
+  
+        <table>
+            <thead>
+               <tr>
+                  <th>id</th>
+                  <th id="">point</th>
+                 
+               </tr>
+            </thead>
+            <tbody id="data-output">
+               <!-- Prodcuts from javascript file in here. -->
+            </tbody>
+         </table>
+   <script>
+   
+      // Function to convert JSON data to HTML table
+      fetch("products.json")
+.then(function(response){
+   return response.json();
+})
+.then(function(products){
+   let placeholder = document.querySelector("#data-output");
+   let out = "";
+   for(let product of products){
+      out += `
+         <tr>
+            <td>${product.id} </td>
+            <td>${product.point}</td>
+           
+         </tr>
+      `;
+   }
+ 
+   placeholder.innerHTML = out;
+});
+   </script>
+</body>
+</html>
